@@ -9,7 +9,11 @@ class Enigma
   end
 
   def decrypt(message, key, offset)
-
+    {
+      decryption: message,
+      key: key,
+      offset: offset,
+    }
   end
 
 end
