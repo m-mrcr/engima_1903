@@ -21,7 +21,7 @@ class KeyTest < MiniTest::Test
     assert_equal 5, @key_2.initial.chars.count
   end
 
-  def test_it_can_split_into_useful_hash
+  def test_it_can_organize_into_hash
     expected = {
                 a: 02,
                 b: 27,
