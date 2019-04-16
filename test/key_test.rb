@@ -21,4 +21,24 @@ class KeyTest < MiniTest::Test
     assert_equal 5, @key_2.chars.count
   end
 
+  def test_it_can_split_into_useful_hash
+    expected = {
+                a: 2,
+                b: 27,
+                c: 71,
+                d: 15
+               }
+
+    assert_equal expected, @key_1.split
+
+    expected = {
+                a: @key_2[0,1],
+                b: @key_2[1,2],
+                c: @key_2[2,3],
+                d: @key_2[3,4]
+               }
+
+    assert_equal expected, @key_1.split
+  end
+
 end
