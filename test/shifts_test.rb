@@ -23,4 +23,14 @@ class ShiftsTest < MiniTest::Test
     assert_instance_of Offset, @shifts_2.offset
   end
 
+  def test_it_can_create_final_shifts_hash
+    expected = {
+                A: 3,
+                B: 27,
+                C: 73,
+                D: 20
+               }
+    assert_equal expected, @shifts_1.final_shifts
+  end
+
 end
