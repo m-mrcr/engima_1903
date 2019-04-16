@@ -12,13 +12,13 @@ class KeyTest < MiniTest::Test
   end
 
   def test_it_initiates_with_given_variables
-    assert_equal "02715", @key_1.key_initial
+    assert_equal "02715", @key_1.initial_key
   end
 
   def test_it_initiates_without_given_variables
-    assert_instance_of String, @key_2.key_initial
-    assert_instance_of Integer, @key_2.key_initial.to_i
-    assert_equal 5, @key_2.key_initial.chars.count
+    assert_instance_of String, @key_2.initial_key
+    assert_instance_of Integer, @key_2.initial_key.to_i
+    assert_equal 5, @key_2.initial_key.chars.count
   end
 
   def test_it_can_organize_into_hash
@@ -29,7 +29,7 @@ class KeyTest < MiniTest::Test
                 d: 15
                }
 
-    assert_equal expected, @key_1.key_split
+    assert_equal expected, @key_1.split_key
   end
 
 end

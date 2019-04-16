@@ -1,16 +1,16 @@
 class Offset
 
-  attr_reader :offset_initial,
-              :offset_split
+  attr_reader :initial_offset,
+              :split_offset
 
-  def initialize(offset_input = Time.now.strftime("%d%m%y"))
-    @offset_initial = offset_input
-    @offset_split = offset_split
+  def initialize(input_offset = Time.now.strftime("%d%m%y"))
+    @initial_offset = input_offset
+    @split_offset = split_offset
   end
 
-  def offset_split
+  def split_offset
    final = {}
-   setting = (@offset_initial.to_i ** 2).to_s.chars.last(4)
+   setting = (@initial_offset.to_i ** 2).to_s.chars.last(4)
    final[:a] = setting[0].to_i
    final[:b] = setting[1].to_i
    final[:c] = setting[2].to_i

@@ -12,13 +12,13 @@ class OffsetTest < MiniTest::Test
   end
 
   def test_it_initiates_with_attributes
-    assert_equal "040895", @offset_1.offset_initial
+    assert_equal "040895", @offset_1.initial_offset
   end
 
   def test_it_initiates_without_attributes
-    assert_instance_of String, @offset_2.offset_initial
-    assert_instance_of Integer, @offset_2.offset_initial.to_i
-    assert_equal Time.now.strftime("%d%m%y"), @offset_2.offset_initial
+    assert_instance_of String, @offset_2.initial_offset
+    assert_instance_of Integer, @offset_2.initial_offset.to_i
+    assert_equal Time.now.strftime("%d%m%y"), @offset_2.initial_offset
   end
 
   def test_it_can_organize_into_hash
@@ -28,7 +28,7 @@ class OffsetTest < MiniTest::Test
                 c: 2,
                 d: 5
                }
-    assert_equal expected, @offset_1.offset_split
+    assert_equal expected, @offset_1.split_offset
   end
 
 end
