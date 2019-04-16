@@ -4,7 +4,7 @@ class Enigma
     {
       encryption: message,
       key: key,
-      offset: offset,
+      date: offset,
     }
   end
 
@@ -12,7 +12,7 @@ class Enigma
     {
       decryption: message,
       key: key,
-      offset: offset,
+      date: offset,
     }
   end
 
