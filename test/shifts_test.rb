@@ -33,4 +33,12 @@ class ShiftsTest < MiniTest::Test
     assert_equal expected, @shifts_1.final_shifts
   end
 
+  def test_it_can_encrypt_a_message
+    assert_equal "keder ohulw", @shifts_1.attack("hello world")
+  end
+
+  def test_it_can_decrypt_message
+    assert_equal "hello world", @shifts_1.attack("keder ohulw")
+  end
+
 end
