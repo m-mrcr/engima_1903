@@ -1,15 +1,15 @@
 require './lib/enigma'
 require './lib/shifts'
-require './lib/key'
 require './lib/offset'
+require './lib/key'
 
-encrypted, decrypt, key, offset = ARGV
+read_file, write_file, key, date = ARGV
 
-encrypted_message = File.open(encrypted, "r")
-decryption_location = File.open(decrypt, "w")
+encrypted = File.open(read_file, "r")
+decrypted = File.open(write_file, "w")
 
-encrypted_message = Enigma.new.decrypt(encrypted_message.read, key, offset)
-created.write(encrypted_message[:decryption])
-created.close
+decryption = Enigma.new.decrypt(encrypted.read.chomp, key, date)
+decrypted.write(decryption[:decryption])
+decrypted.close
 
-p "Created #{decrypt} with the key #{encrypted_message[:key]} and date #{encrypted_message[:date]}"
+p "Created #{write_file} with the key #{decryption[:key]} and date #{decryption[:date]}"
