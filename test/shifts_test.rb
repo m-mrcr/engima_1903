@@ -25,10 +25,10 @@ class ShiftsTest < MiniTest::Test
 
   def test_it_can_create_final_shifts_hash
     expected = {
-                A: 3,
-                B: 27,
-                C: 73,
-                D: 20
+                a: 3,
+                b: 27,
+                c: 73,
+                d: 20
                }
     assert_equal expected, @shifts_1.final_shifts
   end
