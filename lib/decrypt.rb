@@ -1,4 +1,7 @@
-require './test/test_helper'
+require './lib/enigma'
+require './lib/shifts'
+require './lib/offset'
+require './lib/key'
 
 read_file, write_file, key, date = ARGV
 
