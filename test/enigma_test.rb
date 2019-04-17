@@ -10,7 +10,7 @@ class EnigmaTest < MiniTest::Test
     assert_instance_of Enigma, @enigma
   end
 
-  def test_it_can_encrypt_a_provided_message
+  def test_it_can_encrypt_a_provided_unencrypted_message
     expected = { encryption: "keder ohulw",
                  key: "02715",
                  date: "040895"
