@@ -8,7 +8,7 @@ read_file, write_file, key, date = ARGV
 encrypted = File.open(read_file, "r")
 decrypted = File.open(write_file, "w")
 
-decryption = Enigma.new.decrypt(encrypted.read, key, date)
+decryption = Enigma.new.decrypt(encrypted.read.chomp, key, date)
 decrypted.write(decryption[:decryption])
 decrypted.close
 
