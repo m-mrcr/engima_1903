@@ -23,14 +23,8 @@ class ShiftsTest < MiniTest::Test
     assert_instance_of Offset, @shifts_2.offset
   end
 
-  def test_it_can_create_final_shifts_hash
-    expected = {
-                a: 3,
-                b: 27,
-                c: 73,
-                d: 20
-               }
-    assert_equal expected, @shifts_1.final_shifts
+  def test_it_can_generate_relevant_shifts
+    assert_equal [3, 27, 73, 20], @shifts_1.relevant_shifts
   end
 
   def test_it_can_rotate_key
@@ -46,7 +40,7 @@ class ShiftsTest < MiniTest::Test
   end
 
   def test_it_can_decrypt_message
-    assert_equal "hello world", @shifts_1.attack("keder ohulw")
+    assert_equal "hello world", @shifts_1.parry("keder ohulw")
   end
 
 end
