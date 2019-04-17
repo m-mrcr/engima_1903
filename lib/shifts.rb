@@ -29,14 +29,14 @@ class Shifts
 
   def encode(message)
     message.downcase.chars.map do |char|
-      next char unless @characters.include?(char)
+      next unless @characters.include?(char)
       char.tr(@characters.to_s, @characters.rotate(current_rotation).to_s)
     end.join
   end
 
   def decode(message)
     message.downcase.chars.map do |char|
-      next char unless @characters.include?(char)
+      next unless @characters.include?(char)
       char.tr(@characters.to_s, @characters.rotate(-current_rotation).to_s)
     end.join
   end
