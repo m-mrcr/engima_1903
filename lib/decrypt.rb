@@ -7,3 +7,7 @@ encrypted, decrypt, key, offset = ARGV
 
 encrypted_message = File.open(encrypted, "r")
 decryption_location = File.open(decrypt, "w")
+
+encrypted_message = Enigma.new.decrypt(encrypted_message.read, key, offset)
+created.write(encrypted_message[:decryption])
+created.close
