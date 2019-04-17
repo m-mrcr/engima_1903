@@ -33,6 +33,14 @@ class ShiftsTest < MiniTest::Test
     assert_equal expected, @shifts_1.final_shifts
   end
 
+  def test_it_can_rotate_key
+    assert_equal 3, @shifts_1.current_rotation
+    assert_equal 27, @shifts_1.current_rotation
+    assert_equal 73, @shifts_1.current_rotation
+    assert_equal 20, @shifts_1.current_rotation
+    assert_equal 3, @shifts_1.current_rotation
+  end
+
   def test_it_can_encrypt_a_message
     assert_equal "keder ohulw", @shifts_1.attack("hello world")
   end
