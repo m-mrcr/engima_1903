@@ -46,4 +46,10 @@ class EnigmaTest < MiniTest::Test
     assert_equal expected, @enigma.decrypt("ojhavesdyq ", "02715")
   end
 
+  def test_it_can_process_a_message_without_provided_key_and_offset
+    ex = @enigma.encrypt("hello world")
+    solution = @enigma.decrypt(ex[:encryption], ex[:key], ex[:date])
+    assert_equal "hello world", solution[:decryption]
+  end
+
 end
