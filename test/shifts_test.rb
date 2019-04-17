@@ -35,12 +35,12 @@ class ShiftsTest < MiniTest::Test
     assert_equal 3, @shifts_1.current_rotation
   end
 
-  def test_it_can_encrypt_a_message
-    assert_equal "keder ohulw", @shifts_1.attack("hello world")
+  def test_it_can_encode_a_message
+    assert_equal "keder ohulw", @shifts_1.encode("hello world")
   end
 
-  def test_it_can_decrypt_message
-    assert_equal "hello world", @shifts_1.parry("keder ohulw")
+  def test_it_can_decode_message
+    assert_equal "hello world", @shifts_1.decode("keder ohulw")
   end
 
 end
